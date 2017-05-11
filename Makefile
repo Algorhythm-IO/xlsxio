@@ -33,6 +33,10 @@ STRIPFLAG =
 else
 STRIPFLAG = -s
 endif
+ifeq ($(OS),Linux)
+CFLAGS += -I/usr/local/include -I/usr/local/lib/libzip/include
+LDFLAGS += -L/usr/local/lib
+endif
 MKDIR = mkdir -p
 RM = rm -f
 RMDIR = rm -rf
